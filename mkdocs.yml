@@ -6,10 +6,10 @@ site_url: 'https://chakki-works.github.io/doccano/'
 
 # Repository
 repo_name: 'chakki-works/doccano'
-repo_url: 'https://github.com/chakki-works/doccano'
+repo_url: 'https://github.com/quinnpertuit/prolabel'
 
 # Copyright
-copyright: 'Copyright &copy; 2018 - 2019 Hiroki Nakayama'
+copyright: 'AIHR'
 
 theme:
   name: 'material'
@@ -21,9 +21,7 @@ theme:
 extra:
   social:
     - type: 'github'
-      link: 'https://github.com/Hironsan'
-    - type: 'twitter'
-      link: 'https://twitter.com/Hironsan13'
+      link: 'https://github.com/quinnpertuit1'
 
 # Page tree
 nav:
