@@ -1,11 +1,4 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/98a0992c0a254d0ba23fd75631fe2907)](https://app.codacy.com/app/Hironsan/doccano?utm_source=github.com&utm_medium=referral&utm_content=chakki-works/doccano&utm_campaign=Badge_Grade_Dashboard)
-[![Build Status](https://travis-ci.org/chakki-works/doccano.svg?branch=master)](https://travis-ci.org/chakki-works/doccano)
-
-doccano is an open source text annotation tool for human. It provides annotation features for text classification, sequence labeling and sequence to sequence. So, you can create labeled data for sentiment analysis, named entity recognition, text summarization and so on. Just create project, upload data and start annotation. You can build dataset in hours.
-
-## Demo
-
-You can enjoy [annotation demo](http://doccano.herokuapp.com).
+Text annotation tool. Annotation features for text classification, sequence labeling and sequence to sequence. Create labeled data for sentiment analysis, classification models, named entity recognition, and text summarization. 
 
 ### [Named entity recognition](https://doccano.herokuapp.com/demo/named-entity-recognition/)
 
@@ -25,71 +18,28 @@ Final demo is one of the sequence to sequence tasks, machine translation. Since 
 
 ![Machine Translation](./docs/translation.gif)
 
-## Deployment
-
-### Azure
-
-Doccano can be deployed to Azure ([Web App for Containers](https://azure.microsoft.com/en-us/services/app-service/containers/) +
-[PostgreSQL database](https://azure.microsoft.com/en-us/services/postgresql/)) by clicking on the button below:
-
-[![Deploy to Azure](https://azuredeploy.net/deploybutton.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fchakki-works%2Fdoccano%2Fmaster%2Fazuredeploy.json)
-
-### Heroku
-
-Doccano can be deployed to [Heroku](https://www.heroku.com/) by clicking on the button below:
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-Of course, you can deploy doccano by using [heroku-cli](https://devcenter.heroku.com/articles/heroku-cli).
-
-```bash
-heroku create
-heroku stack:set container
-git push heroku master
-```
-
-### AWS
-
-Doccano can be deployed to AWS ([Cloudformation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html)) by clicking on the button below:
-
-[![AWS CloudFormation Launch Stack SVG Button](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://s3-external-1.amazonaws.com/cf-templates-10vry9l3mp71r-us-east-1/20190732wl-new.templatexloywxxyimi&stackName=doccano)
-
-> Notice: (1) EC2 KeyPair cannot be created automatically, so make sure you have an existing EC2 KeyPair in one region. Or [create one yourself](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair). (2) If you want to access doccano via HTTPS in AWS, here is an [instruction](https://github.com/chakki-works/doccano/wiki/HTTPS-setting-for-doccano-in-AWS).
-
 ## Features
 
 -   Collaborative annotation
--   Multi-Language support
--   Emoji :smile: support
--   (future) Auto labeling
+-   Create (import) and export datasets
+-   View annotation progress statistics
 
 ## Requirements
 
 -   Python 3.6+
 -   Django 2.1.7+
 -   Node.js 8.0+
--   Google Chrome(highly recommended)
 
 ## Installation
 
-First of all, you have to clone the repository:
+**Option 1: Pull the production Docker image**
 
 ```bash
-git clone https://github.com/chakki-works/doccano.git
-cd doccano
+docker pull quinnpertuit/prolabel
 ```
+**Option 2: Setup Python environment**
 
-To install doccano, there are three options:
-
-**Option1: Pull the production Docker image**
-
-```bash
-docker pull chakkiworks/doccano
-```
-
-**Option2: Setup Python environment**
-
-First we need to install the dependencies. Run the following commands:
+Install the dependencies. Run the following commands:
 
 ```bash
 sudo apt-get install libpq-dev
@@ -97,7 +47,7 @@ pip install -r requirements.txt
 cd app
 ```
 
-Next we need to start the webpack server so that the frontend gets compiled continuously.
+Next, start the webpack server so that the frontend gets compiled continuously.
 Run the following commands in a new shell:
 
 ```bash
@@ -108,7 +58,7 @@ npm run build
 cd ..
 ```
 
-**Option3: Pull the development Docker-Compose images**
+**Option 3: Pull the development Docker-Compose images**
 
 ```bash
 docker-compose pull
@@ -118,37 +68,33 @@ docker-compose pull
 
 ### Start the development server
 
-Let’s start the development server and explore it.
-
-Depending on your installation method, there are two options:
-
 #### Option 1: Running the Docker image as a Container
 
-First, run a Docker container:
+Run a Docker container:
 
 ```bash
-docker run -d --rm --name doccano \
+docker run -d --rm --name prolabel \
   -e "ADMIN_USERNAME=admin" \
   -e "ADMIN_EMAIL=admin@example.com" \
   -e "ADMIN_PASSWORD=password" \
-  -p 8000:8000 chakkiworks/doccano
+  -p 8000:8000 quinnpertuit1/prolabel
 ```
 
 #### Option 2: Running Django development server
 
-Before running, we need to make migration. Run the following command:
+Before running, make the migration. Run the following command:
 
 ```bash
 python manage.py migrate
 ```
 
-Next we need to create a user who can login to the admin site. Run the following command:
+Create admin user. Run the following command:
 
 ```bash
 python manage.py create_admin --noinput --username "admin" --email "admin@example.com" --password "password"
 ```
 
-Developers can also validate that the project works as expected by running the tests:
+Developers can also validate that the project by running the tests:
 
 ```bash
 python manage.py test server.tests
@@ -203,25 +149,7 @@ You can upload the following types of files (depending on project type):
 -   `Excel file`: file must contain a header with `"text"` as the first column or be one-column excel file. If using labels the sencond column must be the labels. Supports multiple sheets as long as format is the same.
 -   `JSON file`: each line contains a JSON object with a `text` key. JSON format supports line breaks rendering.
 
-> Notice: Doccano won't render line breaks in annotation page for sequence labeling task due to the indent problem, but the exported JSON file still contains line breaks.
-
-`example.txt/csv/xlsx`
-
-```txt
-EU rejects German call to boycott British lamb.
-President Obama is speaking at the White House.
-He lives in Newark, Ohio.
-...
-```
-
-`example.json`
-
-```JSON
-{"text": "EU rejects German call to boycott British lamb."}
-{"text": "President Obama is speaking at the White House."}
-{"text": "He lives in Newark, Ohio."}
-...
-```
+> Notice: Pro-Label won't render line breaks in annotation page for sequence labeling task due to the indent problem, but the exported JSON file still contains line breaks.
 
 Any other columns (for csv/excel) or keys (for json) are preserved and will be exported in the `metadata` column or key as is.
 
@@ -245,7 +173,7 @@ After the annotation step, you can download the annotated data. Click the `Edit 
 
 <img src="./docs/export_data.png" alt="Edit label" width=600>
 
-You can export data as CSV file or JSON file by clicking the button. As for the export file format, you can check it here: [Export File Formats](https://github.com/chakki-works/doccano/wiki/Export-File-Formats). 
+You can export data as CSV file or JSON file by clicking the button. 
 
 Each exported document will have metadata column or key, which will contain
 additional columns or keys from the imported document. The primary use-case for metadata is to allow you to match exported data with other system
