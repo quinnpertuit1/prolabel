@@ -1,18 +1,19 @@
+# AIHR Pro-Label
 Text annotation tool. Annotation features for text classification, sequence labeling and sequence to sequence. Create labeled data for sentiment analysis, classification models, named entity recognition, and text summarization. 
 
-### [Named entity recognition](https://doccano.herokuapp.com/demo/named-entity-recognition/)
+### Named entity recognition
 
 First demo is one of the sequence labeling tasks, named-entity recognition. You just select text spans and annotate it. Since doccano supports shortcut key, so you can quickly annotate text spans.
 
 ![Named Entity Recognition](./docs/entity.gif)
 
-### [Sentiment analysis]
+### Doc Classification / Doc Sentiment
 
 Second demo is one of the text classification tasks, topic classification. Since there may be more than one category, you can annotate multi-labels.
 
 ![Text Classification](./docs/classification.gif)
 
-### [Machine translation]
+### Machine translation
 
 Final demo is one of the sequence to sequence tasks, machine translation. Since there may be more than one responses in sequence to sequence tasks, you can create multi responses.
 
