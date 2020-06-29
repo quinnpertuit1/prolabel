@@ -32,9 +32,9 @@ services:
   postgres:
     image: postgres:9.6
     environment:
-      POSTGRES_USER: "doccano"
-      POSTGRES_PASSWORD: "doccano"
-      POSTGRES_DB: "doccano"
+      POSTGRES_USER: "quinn"
+      POSTGRES_PASSWORD: "quinn"
+      POSTGRES_DB: "prolabel"
     ports:
       - 5432:5432
 
