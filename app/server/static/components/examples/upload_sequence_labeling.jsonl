@@ -1,3 +1,3 @@
-{"text": "EU rejects German call to boycott British lamb.", "labels": [ [0, 2, "ORG"], [11, 17, "MISC"], ... ]}
-{"text": "Peter Blackburn", "labels": [ [0, 15, "PERSON"] ]}
-{"text": "President Obama", "labels": [ [10, 15, "PERSON"] ]}
+{"text": "IBM learned	Watson train on	coding Watson	internals	Cody McCody", "labels": [ [0, 3, "ORG"], [12, 18, "MISC"], ... ]}
+{"text": "Cody McCody", "labels": [ [0, 15, "PERSON"] ]}
+{"text": "Senior Software Engineer", "labels": [ [7, 24, "JOB"] ]}
