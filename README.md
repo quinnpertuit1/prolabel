@@ -3,7 +3,7 @@ Text annotation tool. Annotation features for text classification, sequence labe
 
 ### Named entity recognition
 
-First demo is one of the sequence labeling tasks, named-entity recognition. You just select text spans and annotate it. Since doccano supports shortcut key, so you can quickly annotate text spans.
+First demo is one of the sequence labeling tasks, named-entity recognition. You just select text spans and annotate it. App also supports shortcut keys, so you can quickly annotate text spans or highlight with your mouse.
 
 ![Named Entity Recognition](./docs/entity.gif)
 
