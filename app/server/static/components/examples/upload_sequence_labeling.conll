@@ -1,12 +1,12 @@
-EU	B-ORG
-rejects	O
-German	B-MISC
-call	O
-to	O
-boycott	O
-British	B-MISC
-lamb	O
+IBM	B-ORG
+learned	O
+Watson	B-MISC
+train	O
+on	O
+coding	O
+Watson	B-MISC
+internals	O
 .	O
 
-Peter	B-PER
-Blackburn	I-PER
+Cody	B-PER
+McCody	I-PER
