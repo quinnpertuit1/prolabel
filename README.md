@@ -16,8 +16,6 @@ Second demo is one of the text classification tasks, topic classification. Since
 
 Final demo is one of the sequence to sequence tasks, machine translation. Since there may be more than one responses in sequence to sequence tasks, you can create multi responses.
 
-![Machine Translation]
-
 ## Features
 
 -   Collaborative annotation
@@ -126,21 +124,13 @@ Now, open a Web browser and go to <http://127.0.0.1:8000/login/>. You should see
 
 ### Create a project
 
-Now, try logging in with the superuser account you created in the previous step. You should see the doccano project list page:
+Log in with the superuser account. 
 
-<img src="./docs/projects.png" alt="projects" width=600>
-
-There is no project created yet. To create your project, make sure you’re in the project list page and select `Create Project` button. You should see the following screen:
-
-<img src="./docs/create_project.png" alt="Project Creation" width=400>
-
-In this step, you can select three project types: text classificatioin, sequence labeling and sequence to sequence. You should select a type with your purpose.
+Chose project type (classification, entity, or sequence-to-sequence.
 
 ### Import Data
 
-After creating a project, you will see the "Import Data" page, or click `Import Data` button in the navigation bar. You should see the following screen:
-
-<img src="./docs/upload.png" alt="Upload project" width=600>
+After creating a project, you will see the "Import Data" page, or click `Import Data` button in the navigation bar. 
 
 You can upload the following types of files (depending on project type):
 
@@ -165,13 +155,9 @@ Click `Labels` button in left bar to define your own labels. You should see the 
 
 Now, you are ready to annotate the texts. Just click the `Annotate Data` button in the navigation bar, you can start to annotate the documents you uploaded.
 
-<img src="./docs/annotation.png" alt="Edit label" width=600>
-
 ### Export Data
 
-After the annotation step, you can download the annotated data. Click the `Edit data` button in navigation bar, and then click `Export Data`. You should see below screen:
-
-<img src="./docs/export_data.png" alt="Edit label" width=600>
+After the annotation is complete (partially or in full), you can download the annotated data. Click the `Edit data` button in navigation bar, and then click `Export Data`.
 
 You can export data as CSV file or JSON file by clicking the button. 
 
