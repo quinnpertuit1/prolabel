@@ -4,19 +4,19 @@ Text annotation tool. Annotation features for text classification, sequence labe
 
 First demo is one of the sequence labeling tasks, named-entity recognition. You just select text spans and annotate it. Since doccano supports shortcut key, so you can quickly annotate text spans.
 
-![Named Entity Recognition](./docs/named_entity_annotation.gif)
+![Named Entity Recognition](./docs/entity.gif)
 
-### [Sentiment analysis](https://doccano.herokuapp.com/demo/text-classification/)
+### [Sentiment analysis]
 
 Second demo is one of the text classification tasks, topic classification. Since there may be more than one category, you can annotate multi-labels.
 
-![Text Classification](./docs/text_classification.gif)
+![Text Classification](./docs/classification.gif)
 
-### [Machine translation](https://doccano.herokuapp.com/demo/translation/)
+### [Machine translation]
 
 Final demo is one of the sequence to sequence tasks, machine translation. Since there may be more than one responses in sequence to sequence tasks, you can create multi responses.
 
-![Machine Translation](./docs/translation.gif)
+![Machine Translation]
 
 ## Features
 
@@ -183,12 +183,12 @@ Input file may look like this:
 `import.json`
 
 ```JSON
-{"text": "EU rejects German call to boycott British lamb.", "meta": {"external_id": 1}}
+{"text": "Working for IBM as a senior software entineer.", "meta": {"external_id": 1}}
 ```
 
 and the exported file will look like this:
 `output.json`
 
 ```JSON
-{"doc_id": 2023, "text": "EU rejects German call to boycott British lamb.", "labels": ["news"], "username": "root", "meta": {"external_id": 1}}
+{"doc_id": 2023, "text": "Designing autonomous systems for Skunkworks", "labels": ["Autonomy"], "username": "root", "meta": {"external_id": 1}}
 ```
