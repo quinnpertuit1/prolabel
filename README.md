@@ -31,14 +31,14 @@ Final demo is one of the sequence to sequence tasks, machine translation. Since 
 
 ## Installation
 
-**Option 1: Pull the production Docker image**
+**Option 1: Pull production Docker image**
 
 ```bash
 docker pull quinnpertuit/prolabel
 ```
 **Option 2: Setup Python environment**
 
-Install the dependencies. Run the following commands:
+Install dependencies:
 
 ```bash
 sudo apt-get install libpq-dev
@@ -46,8 +46,7 @@ pip install -r requirements.txt
 cd app
 ```
 
-Next, start the webpack server so that the frontend gets compiled continuously.
-Run the following commands in a new shell:
+Start the webpack server so the frontend gets compiled continuously:
 
 ```bash
 cd server/static
@@ -67,7 +66,7 @@ docker-compose pull
 
 ### Start the development server
 
-#### Option 1: Running the Docker image as a Container
+#### Option 1: Docker image as a Container
 
 Run a Docker container:
 
@@ -79,7 +78,7 @@ docker run -d --rm --name prolabel \
   -p 8000:8000 quinnpertuit1/prolabel
 ```
 
-#### Option 2: Running Django development server
+#### Option 2: Django development server
 
 Before running, make the migration. Run the following command:
 
@@ -93,35 +92,33 @@ Create admin user. Run the following command:
 python manage.py create_admin --noinput --username "admin" --email "admin@example.com" --password "password"
 ```
 
-Developers can also validate that the project by running the tests:
+Developers can validate the project by running the tests:
 
 ```bash
 python manage.py test server.tests
 ```
 
-Finally, to start the server, run the following command:
+Finally, to start the server:
 
 ```bash
 python manage.py runserver
 ```
 
-Optionally, you can change the bind ip and port using the command
+Optional; change the bind ip and port:
 
 ```bash
 python manage.py runserver <ip>:<port>
 ```
 
-#### Option 3: Running the development Docker-Compose stack
+#### Option 3: Development Docker-Compose stack
 
-We can use docker-compose to set up the webpack server, django server, database, etc. all in one command:
+Use docker-compose to set up the webpack server, django server, database, all in one command:
 
 ```bash
 docker-compose up
 ```
 
-Now, open a Web browser and go to <http://127.0.0.1:8000/login/>. You should see the login screen:
-
-<img src="./docs/login_form.png" alt="Login Form" width=400>
+Open a Web browser and go to <http://127.0.0.1:8000/login/>. 
 
 ### Create a project
 
