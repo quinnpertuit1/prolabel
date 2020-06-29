@@ -3,9 +3,10 @@
 {% load render_bundle from webpack_loader %}
 
 {% block header %}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
-{% endblock %}
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/swiper.min.css' %}" media="screen"/>
+<link rel="stylesheet" href="{% static 'assets/css/swiper.min.css' %}">
 
+{% endblock %}
 {% block content %}
 <section class="hero" style="background-color:#2a2e2f">
   <div class="container">
@@ -116,7 +117,7 @@
         <div class="card is-shady">
           <div class="card-image">
             <figure class="image is-4by3">
-              <img src="https://1219786023.rsc.cdn77.org/wp-content/uploads/2018/04/lockheedmartin.jpg" alt="Placeholder image" class="modal-button" data-target="modal-image2">
+              <img src="{% static 'assets/images/cats/seq2seq.jpg' %}" alt="Placeholder image" class="modal-button" data-target="modal-image2">
             </figure>
           </div>
           <div class="card-content">
@@ -132,7 +133,7 @@
         <div class="card is-shady">
           <div class="card-image">
             <figure class="image is-4by3">
-              <img src="https://www.lockheedmartin.com/content/dam/lockheed-martin/rms/photo/sikorsky/Sikorsky-Military-Aircraft-masthead.jpg.pc-adaptive.full.medium.jpeg" alt="Placeholder image">
+              <img src="{% static 'assets/images/cats/sequence_labeling.jpg' %}" alt="Placeholder image">
             </figure>
           </div>
           <div class="card-content">
@@ -147,7 +148,7 @@
         <div class="card is-shady">
           <div class="card-image">
             <figure class="image is-4by3">
-              <img src="https://cdn.mos.cms.futurecdn.net/8NhzoK2Sy2UiGTXzrC2pe-1200-80.jpg" alt="Placeholder image">
+              <img src="{% static 'assets/images/cats/text_classification.jpg' %}" alt="Placeholder image">
             </figure>
           </div>
           <div class="card-content">
