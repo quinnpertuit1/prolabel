@@ -1,12 +1,12 @@
 # Project information
-site_name: 'doccano'
-site_description: 'A Text Annotation tool for Human'
-site_author: 'Hiroki Nakayama'
-site_url: 'https://chakki-works.github.io/doccano/'
+site_name: 'pro-label'
+site_description: 'AIHR Text Annotation tool'
+site_author: 'Quinn Pertuit'
+site_url: 'https://github.com/quinnpertuit1/prolabel'
 
 # Repository
-repo_name: 'chakki-works/doccano'
-repo_url: 'https://github.com/quinnpertuit/prolabel'
+repo_name: 'quinnpertuit1/prolabel'
+repo_url: 'https://github.com/quinnpertuit1/prolabel'
 
 # Copyright
 copyright: 'AIHR'
@@ -31,10 +31,3 @@ nav:
   - Advanced:
     - AWS HTTPS settings: advanced/aws_https_settings.md
     - OAuth2 settings: advanced/oauth2_settings.md
-  #- Release notes: release-notes.md
-  #- Author's notes: authors-notes.md
-  - FAQ: faq.md
-  - Contributing: CONTRIBUTING.md
-  - Code of Conduct: CODE_OF_CONDUCT.md
-  - Roadmap: roadmap.md
-  - License: LICENSE.md
