@@ -25,7 +25,7 @@ extra:
 
 # Page tree
 nav:
-  - Doccano: index.md
+  - Pro-Label: index.md
   - Getting started: getting-started.md
   - Tutorial: tutorial.md
   - Advanced:
