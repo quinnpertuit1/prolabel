@@ -4,7 +4,7 @@
     "keywords": ["Python", "Machine Learning", "Annotation"],
     "website": "",
     "repository": "https://github.com/quinnpertuit1/prolabel",
-    "logo": "https://github.com/chakki-works/doccano/wiki/images/doccano.png",
+    "logo": "https://github.com/quinnpertuit1/prolabel/app/static/src/images/logo.png",
     "success_url": "/",
     "env": {
         "ADMIN_USER_NAME": {
