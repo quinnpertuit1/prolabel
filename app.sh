@@ -1,3 +1,3 @@
-cd app/server/static
+cd /Users/quinnx/Desktop/prolabel/app/server/static
 npm start &
-python /Volumes/Transcend/Github/plabelv2/app/manage.py runserver 0.0.0.0:8888
+python /Users/quinnx/Desktop/prolabel/app/manage.py runserver 0.0.0.0:8888
