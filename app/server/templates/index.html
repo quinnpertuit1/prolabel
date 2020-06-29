@@ -3,7 +3,8 @@
 {% load render_bundle from webpack_loader %}
 
 {% block header %}
-<link rel="stylesheet" type="css/text" href="https://raw.githubusercontent.com/quinnpertuit1/prolabel/productionv1/app/server/static/assets/css/admin.css">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/swiper.min.css' %}" media="screen"/>
+<link rel="stylesheet" href="{% static 'assets/css/swiper.min.css' %}">
 
 {% endblock %}
 {% block content %}
@@ -14,7 +15,7 @@
         <h1 class="title is-1 has-text-white">AIHR Text annotations</h1>
         <h2 class="subtitle is-4 has-text-white">Create your project, upload data and start annotations.</h2>
         <p>
-          <a href="./demo-named-entity-recognition" class="button is-medium is-primary">
+          <a href="{% url 'demo-named-entity-recognition' %}" class="button is-medium is-primary">
             AIHR Go
           </a>
         </p>
