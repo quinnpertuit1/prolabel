@@ -135,26 +135,22 @@ After creating a project, you will see the "Import Data" page, or click `Import 
 
 You can upload the following types of files (depending on project type):
 
--   `Text file`: file must contain one sentence/document per line separated by new lines.
--   `CSV file`: file must contain a header with `"text"` as the first column or be one-column csv file. If using labels the sencond column must be the labels.
--   `Excel file`: file must contain a header with `"text"` as the first column or be one-column excel file. If using labels the sencond column must be the labels. Supports multiple sheets as long as format is the same.
+-   `Text file`: one sentence/document per line
+-   `CSV file`: header with `"text"` as the first column or one-column csv file. If using labels the second column must be the labels.
+-   `Excel file`: header with `"text"` as the first column or one-column excel file. If using labels the second column must be the labels. Supports multiple sheets as long as format is the same.
 -   `JSON file`: each line contains a JSON object with a `text` key. JSON format supports line breaks rendering.
 
 > Notice: Pro-Label won't render line breaks in annotation page for sequence labeling task due to the indent problem, but the exported JSON file still contains line breaks.
 
-Any other columns (for csv/excel) or keys (for json) are preserved and will be exported in the `metadata` column or key as is.
-
-Once you select a TXT/JSON file on your computer, click `Upload dataset` button. After uploading the dataset file, we will see the `Dataset` page (or click `Dataset` button list in the left bar). This page displays all the documents we uploaded in one project.
+Any other columns (for csv/excel) or keys (for json) are preserved and will be exported in the `metadata` column.
 
 ### Define labels
 
-Click `Labels` button in left bar to define your own labels. You should see the label editor page. In label editor page, you can create labels by specifying label text, shortcut key, background color and text color.
-
-<img src="./docs/label_editor.png" alt="Edit label" width=600>
+Click `Labels` button in left bar to define custom labels. Specify label text, shortcut key, and colors.
 
 ### Annotation
 
-Now, you are ready to annotate the texts. Just click the `Annotate Data` button in the navigation bar, you can start to annotate the documents you uploaded.
+Click the `Annotate Data` button in the navigation bar, and start to annotate the documents you uploaded.
 
 ### Export Data
 
@@ -162,18 +158,16 @@ After the annotation is complete (partially or in full), you can download the an
 
 You can export data as CSV file or JSON file by clicking the button. 
 
-Each exported document will have metadata column or key, which will contain
-additional columns or keys from the imported document. The primary use-case for metadata is to allow you to match exported data with other system
-by adding `external_id` to the imported file. For example:
+Exported documents have a metadata column or key, which will contain additional columns or keys from the imported document. For example:
 
-Input file may look like this:
+Input file:
 `import.json`
 
 ```JSON
 {"text": "Working for IBM as a senior software entineer.", "meta": {"external_id": 1}}
 ```
 
-and the exported file will look like this:
+Exported File:
 `output.json`
 
 ```JSON
