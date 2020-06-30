@@ -6,10 +6,10 @@ RUN curl -sL "https://deb.nodesource.com/setup_${NODE_VERSION}" | bash - \
  && apt-get install --no-install-recommends -y \
       nodejs
 
-COPY tools/install-mssql.sh /doccano/tools/install-mssql.sh
+COPY tools/install-mssql.sh /prolabel/tools/install-mssql.sh
 RUN /doccano/tools/install-mssql.sh --dev
 
-COPY app/server/static/package*.json /doccano/app/server/static/
+COPY app/server/static/package*.json /prolabel/app/server/static/
 RUN cd /doccano/app/server/static \
  && npm ci
 
@@ -44,7 +44,7 @@ RUN pip install --no-cache-dir /deps/*.whl
 COPY --from=cleaner --chown=prolabel:prolabel /prolabel /prolabel
 
 ENV DEBUG="True"
-ENV SECRET_KEY="change-me-in-production"
+ENV SECRET_KEY="prolabelkey"
 ENV PORT="8000"
 ENV WORKERS="2"
 ENV GOOGLE_TRACKING_ID=""
