@@ -7,10 +7,10 @@ RUN curl -sL "https://deb.nodesource.com/setup_${NODE_VERSION}" | bash - \
       nodejs
 
 COPY tools/install-mssql.sh /prolabel/tools/install-mssql.sh
-RUN /doccano/tools/install-mssql.sh --dev
+RUN /prolabel/tools/install-mssql.sh --dev
 
 COPY app/server/static/package*.json /prolabel/app/server/static/
-RUN cd /doccano/app/server/static \
+RUN cd /prolabel/app/server/static \
  && npm ci
 
 COPY requirements.txt /
