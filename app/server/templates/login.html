@@ -7,17 +7,17 @@
     <div class="column is-4 is-offset-4">
       <div class="box has-text-left">
         {% if form.errors %}
-        <p>Your username and password didn't match. Please try again.</p>
+        <p>Incorrect Credentials.</p>
         {% endif %} {% if next %} {% if user.is_authenticated %}
-        <p>Your account doesn't have access to this page. To proceed, please login with an account that has access.</p>
+        <p>Your account doesn't have access to this page.</p>
         {% else %}
-        <p>Please login to see this page.</p>
+        <p>Please log in to see this page.</p>
         {% endif %} {% endif %}
 
         <form method="post" action="{% url 'login' %}">
           {% csrf_token %}
           <div class="field ">
-            <label class="label">Username</label>
+            <label class="label">User</label>
             <div class="control has-icons-left has-icons-right">
               {{ form.username|add_class:"input" }}
               <span class="icon is-small is-left">
@@ -50,7 +50,7 @@
           {% if allow_signup %}
           <div class="field">
             <span class="checkbox" style="margin-top:10px">
-              Not registered yet ? <a href="{% url 'signup' %}"> Sign up </a>
+              New user? <a href="{% url 'signup' %}"> Sign up </a>
             </span>
           </div>
           {% endif %}
@@ -58,12 +58,6 @@
         </form>
         {% if social_login_enabled %}
         <div class="is-divider" data-content="OR"></div>
-        {% endif %}
-        {% if github_login %}
-        <a href="{% url 'social:begin' 'github' %}" class="button is-fullwidth mb10">
-          <span class="icon"><i class="fab fa-github"></i></span>
-          <span>Login with Github</span>
-        </a>
         {% endif %}
         {% if aad_login %}
         <a href="{% url 'social:begin' 'azuread-tenant-oauth2' %}" class="button is-fullwidth mb10">

@@ -7,16 +7,17 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>doccano - Document Annotation Tool</title>
+  <title>prolabel - ml annotation tools</title>
+  
+<link rel="stylesheet" href="{% static 'assets/css/all.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/opensans.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/bulma.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/bulma-divider.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/bulma-checkradio.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/bulma-tooltip.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/forum.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/opensans.css' %}">
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-    crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-extensions@4.0.1/bulma-divider/dist/css/bulma-divider.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-extensions@4.0.1/bulma-checkradio/dist/css/bulma-checkradio.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-extensions@4.0.1/bulma-tooltip/dist/css/bulma-tooltip.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="{% static 'assets/css/forum.css' %}">
   <!-- favicon settings -->
   <link rel="apple-touch-icon" sizes="57x57" href="{% static 'static/apple-icon-57x57.png' %}">
   <link rel="apple-touch-icon" sizes="60x60" href="{% static 'static/apple-icon-60x60.png' %}">
@@ -45,7 +46,7 @@
       <div class="navbar-brand">
         <a class="navbar-item" href="{% url 'index' %}">
           <img src="{% static 'assets/images/logo.png' %}" width="32" height="32">
-          <b>doccano</b>
+          <b>aihr prolabel</b>
         </a>
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="topNav">
           <span aria-hidden="true"></span>
@@ -59,36 +60,36 @@
           {% if not user.is_authenticated %}
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
-              <span>Live Demo</span>
+              <span>Launch</span>
             </a>
             <div class="navbar-dropdown">
               <a href="{% url 'demo-text-classification' %}" class="navbar-item">
-                Sentiment Analysis
+                doc classification / doc sentiment
               </a>
               <a href="{% url 'demo-named-entity-recognition' %}" class="navbar-item">
-                Named Entity Recognition
+                named entity recognition
               </a>
               <a href="{% url 'demo-translation' %}" class="navbar-item">
-                Translation
+                sequence-to-sequence
               </a>
             </div>
           </div>
-          <a class="navbar-item" href="https://github.com/chakki-works/doccano">
-            <span>GitHub</span>
+          <a class="navbar-item" href="">
+            <span>contact</span>
           </a>
           {% endif %}
           {% if user.is_authenticated %}
           <a class="navbar-item" href="{% url 'projects' %}">
-            <span>Projects</span>
+            <span>projects</span>
           </a>
           {% endif %}
           {% if not user.is_authenticated %}
           <a class="navbar-item" href="{% url 'login' %}">
-            <span>Login</span>
+            <span>login</span>
           </a>
           {% else %}
           <a class="navbar-item" href="{% url 'logout' %}">
-            <span>Logout</span>
+            <span>logout</span>
           </a>
           {% endif %}
         </div>
