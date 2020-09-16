@@ -3,7 +3,7 @@
 {% load render_bundle from webpack_loader %}
 {% block header %}
 <link rel="stylesheet" href="{% static 'assets/css/admin.css' %}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css">
+<link rel="stylesheet" href="{% static 'assets/css/vs2015.min.css' %}">
 {% endblock %}
 {% block navigation %}
 <a class="navbar-item" href="{% url 'annotation' view.kwargs.project_id %}">
@@ -34,31 +34,31 @@
           <span class="icon">
             <i class="fa fa-inbox"></i>
           </span>
-          <span class="name">Dataset</span>
+          <span class="name">datasets</span>
         </a>
         <a href="{% url 'label-management' view.kwargs.project_id %}" class="item">
           <span class="icon">
             <i class="fa fa-star"></i>
           </span>
-          <span class="name">Labels</span>
+          <span class="name">labels</span>
         </a>
         <a href="{% url 'stats' view.kwargs.project_id %}" class="item">
           <span class="icon">
             <i class="fas fa-signal"></i>
           </span>
-          <span class="name">Statistics</span>
+          <span class="name">stats</span>
         </a>
         <a href="{% url 'guideline' view.kwargs.project_id %}" class="item">
           <span class="icon">
             <i class="fas fa-book"></i>
           </span>
-          <span class="name">Guideline</span>
+          <span class="name">guidelines</span>
         </a>
         <a href="{% url 'users' view.kwargs.project_id %}" class="item">
             <span class="icon">
                 <i class="fas fa-users"></i>
             </span>
-            <span class="name">Users</span>
+            <span class="name">users</span>
         </a>
       </div>
     </div>

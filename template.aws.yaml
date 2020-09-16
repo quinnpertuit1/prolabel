@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: "Deploy doccano on AWS EC2"
+Description: "Deploy prolabel on AWS EC2"
 
 Parameters:
   Username:
@@ -33,7 +33,7 @@ Metadata:
   AWS::CloudFormation::Interface:
     ParameterGroups:
       - Label:
-          default: "doccano Configuration"
+          default: "prolabel Configuration"
         Parameters:
           - Username
           - Password
@@ -53,13 +53,13 @@ Resources:
       InstanceTenancy: default
       Tags:
         - Key: Name
-          Value: doccanoVPC
+          Value: prolabelVPC
   InternetGateway:
     Type: AWS::EC2::InternetGateway
     Properties:
       Tags:
         - Key: Name
-          Value: doccano-igw
+          Value: prolabel-igw
   AttachGateway:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
@@ -76,7 +76,7 @@ Resources:
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
-          Value: doccano-public-subnet
+          Value: prolabel-public-subnet
       VpcId: !Ref VPC
   PublicRouteTable:
     Type: AWS::EC2::RouteTable
@@ -84,7 +84,7 @@ Resources:
       VpcId: !Ref VPC
       Tags:
         - Key: Name
-          Value: doccanoRouteTable
+          Value: prolabelRouteTable
   PublicRoute:
     Type: AWS::EC2::Route
     Properties:
@@ -99,8 +99,8 @@ Resources:
   EC2SecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroupName: "doccano-ec2-sg"
-      GroupDescription: "Security Group for doccano"
+      GroupName: "prolabel-ec2-sg"
+      GroupDescription: "Security Group for prolabel"
       VpcId: !Ref VPC
       SecurityGroupIngress:
         - IpProtocol: tcp
@@ -113,7 +113,7 @@ Resources:
           CidrIp: 0.0.0.0/0
       Tags:
         - Key: Name
-          Value: doccano-ec2-sg
+          Value: prolabel-ec2-sg
   EC2Instance:
     Type: AWS::EC2::Instance
     Properties:
@@ -142,14 +142,14 @@ Resources:
           ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
           # Install git
           yum install -y git
-          git clone https://github.com/doccano/doccano.git
-          cd doccano
+          git clone https://github.com/quinnpertuit1/prolabel.git
+          cd prolabel
           sed -i s/"admin"/${Username}/g docker-compose.prod.yml
           sed -i s/"password"/${Password}/g docker-compose.prod.yml
           docker-compose -f docker-compose.prod.yml up -d
       Tags:
         - Key: Name
-          Value: doccano
+          Value: prolabel
 Outputs:
   PublicDNS:
     Description: EC2 public DNS

@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: AWS CloudFormation Template for doccano.
+Description: AWS CloudFormation Template for prolabel.
 Resources:
   AppSG:
     Type: 'AWS::EC2::SecurityGroup'
@@ -116,10 +116,10 @@ Resources:
             - |
               sudo docker pull ${DOCKER_IMAGE}
             - >
-              sudo docker run -d --name doccano --env-file /env.list -p 80:8000
+              sudo docker run -d --name prolabel --env-file /env.list -p 80:8000
               ${DOCKER_IMAGE}
             - >
-              sleep 3 && sudo docker exec doccano tools/create-admin.sh ${ADMIN} ${EMAIL}
+              sleep 3 && sudo docker exec prolabel tools/create-admin.sh ${ADMIN} ${EMAIL}
               ${PASSWORD}
     Metadata:
       'AWS::CloudFormation::Designer':
@@ -300,7 +300,7 @@ Parameters:
     Type: String
     AllowedPattern: '^[\x20-\x45]?[\w-\+]+(\.[\w]+)*@[\w-]+(\.[\w]+)*(\.[a-z]{2,})?$'
   DockerImageName:
-    Default: doccano/doccano:latest
+    Default: prolabel/prolabel:latest
     Description: The Docker image name
     Type: String
     AllowedPattern: '^[\w_-]+/[\w_-]+:[\w_-]+$'

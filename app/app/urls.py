@@ -25,10 +25,10 @@ from server.views import LoginView
 # TODO: adds AnnotationList and AnnotationDetail endpoint.
 schema_view = get_schema_view(
    openapi.Info(
-      title="doccano API",
+      title="prolabel API",
       default_version='v1',
-      description="doccano API description",
-      license=openapi.License(name="MIT License"),
+      description="prolabel API description",
+      license=openapi.License(name="private"),
    ),
    public=True,
 )
