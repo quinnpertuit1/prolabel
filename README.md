@@ -125,7 +125,7 @@ Open a Web browser and go to <http://127.0.0.1:8000/login/>.
 
 | Service | Button |
 |---------|---|
-| AWS[^1]   | [![AWS CloudFormation Launch Stack SVG Button](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home?#/stacks/new?stackName=doccano&templateURL=https://raw.githubusercontent.com/quinnpertuit1/prolabel/master/template.aws.yaml)  |
+| AWS[^1]   | [![AWS CloudFormation Launch Stack SVG Button](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home?#/stacks/new?stackName=doccano&templateURL=https://3443p.s3.amazonaws.com/prolabel/cloudformation/template.aws.yaml)  |
 
 ### Create a project
 
